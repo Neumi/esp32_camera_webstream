@@ -8,7 +8,7 @@ Bringing the ESP32 camera video stream to the web!
 The Arduino ESP32-Camera test sketch only lets you use the stream on your local network. To get the stream to the web, you need a bit more...
 
 This collection of scripts consists of:
- - ESP32 code for Arduino `websocket_camera_stream.ino`
+ - Arduino code for ESP32 camera module (AI Thinker CAM) `websocket_camera_stream.ino`
  - python code to receive the images via websockets with `receive_stream.py`
  - python code to push the most recent image to a website with `send_image_stream.py`
 

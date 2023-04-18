@@ -35,3 +35,8 @@ Now enjoy your fresh live stream! 📺
 # Known Issues
 Sometimes the stream stops and the preview freezes. This only happend to me on a Raspberry Pi with low processing power. Normal cloud server seem to work fine. If you encounter this problem, create a placeholder.jpg in the directory of send_image_stream.py by `cp image.jpg placeholder.jpg` after you received an image from the ESP32 camera.
 This issus is caused, because your browser don't like to get a broken images.
+
+### You have to have the right board.
+There are many ESP32 Camera modules. The defined pins in `websocket_camera_stream.ino` only work with the AI Thinker Cam. Change this, if you have a different board. The only tested camera is currently the OV2640.
+![ESP32 CAMERA](/images/esp_ai_thinker_camera.jpg)
+

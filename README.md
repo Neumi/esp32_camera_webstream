@@ -33,6 +33,7 @@ Now enjoy your fresh live stream! 📺
 
 
 # Known Issues
+### Browsers don't like broken images.
 Sometimes the stream stops and the preview freezes. This only happend to me on a Raspberry Pi with low processing power. Normal cloud server seem to work fine. If you encounter this problem, create a placeholder.jpg in the directory of send_image_stream.py by `cp image.jpg placeholder.jpg` after you received an image from the ESP32 camera.
 This issus is caused, because your browser don't like to get a broken images.
 

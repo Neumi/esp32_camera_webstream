@@ -9,8 +9,8 @@ The Arduino ESP32-Camera test sketch only lets you use the stream on your local 
 
 This collection of scripts consists of:
  - Arduino code for ESP32 camera module (AI Thinker CAM) `websocket_camera_stream.ino`
- - python code to receive the images via websockets with `receive_stream.py`
- - python code to push the most recent image to a website with `send_image_stream.py`
+ - Python code to receive the images via websockets with `receive_stream.py`
+ - Python code to push the most recent image to a website with `send_image_stream.py`
 
 
  # Why is this cool?

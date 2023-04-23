@@ -39,3 +39,7 @@ This issus is caused, because your browser don't like to get a broken images.
 
 ### You have to have the right board.
 There are many ESP32 Camera modules. The defined pins in `websocket_camera_stream.ino` only work with the AI Thinker Cam. Change this, if you have a different board. The only tested camera is currently the OV2640.
+
+
+## Video!
+[![LINK TO VIDEO](https://img.youtube.com/vi/cdjgs48OQ6E/0.jpg)](https://www.youtube.com/watch?v=cdjgs48OQ6E)

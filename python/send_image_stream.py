@@ -6,6 +6,8 @@ from PIL import Image
 from flask import Flask, Response
 from base64 import b64encode
 
+from queueue import q
+
 
 app = Flask(__name__)
 
@@ -17,8 +19,7 @@ def index():
 def get_image():
     while True:
         try:
-            with open("image.jpg", "rb") as f:
-                image_bytes = f.read()
+            image_bytes = q.get(timeout=10)
             image = Image.open(BytesIO(image_bytes))
             img_io = BytesIO()
             image.save(img_io, 'JPEG')
@@ -41,5 +42,3 @@ def get_image():
             yield (b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + img_bytes + b'\r\n')
             continue
-
-app.run(host='0.0.0.0', debug=False, threaded=True)

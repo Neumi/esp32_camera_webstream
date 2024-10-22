@@ -5,6 +5,10 @@ from io import BytesIO
 
 from PIL import Image, UnidentifiedImageError
 
+from multiprocessing import Queue
+
+from queueue import q
+
 def is_valid_image(image_bytes):
     try:
         Image.open(BytesIO(image_bytes))
@@ -18,19 +22,16 @@ async def handle_connection(websocket, path):
     while True:
         try:
             message = await websocket.recv()
-            print(len(message))
+            #print(len(message)) # This made the IP to connect to go away
             if len(message) > 5000:
                   if is_valid_image(message):
                           #print(message)
-                          with open("image.jpg", "wb") as f:
-                                f.write(message)
+                          q.put(message) # puts message into queue
 
-            print()
+            #print()
         except websockets.exceptions.ConnectionClosed:
             break
 
 async def main():
     server = await websockets.serve(handle_connection, '0.0.0.0', 3001)
     await server.wait_closed()
-
-asyncio.run(main())

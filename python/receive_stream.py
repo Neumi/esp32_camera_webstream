@@ -14,7 +14,7 @@ def is_valid_image(image_bytes):
         print("image invalid")
         return False
 
-async def handle_connection(websocket, path):
+async def handle_connection(websocket):
     while True:
         try:
             message = await websocket.recv()

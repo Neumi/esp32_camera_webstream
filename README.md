@@ -4,6 +4,7 @@
 # esp32_camera_webstream
 Bringing the ESP32 camera video stream to the web!
 
+Want to stay updated or participate? Join my [Discord](https://discord.com/invite/rerCyqAcrw)!
 
 The Arduino ESP32-Camera test sketch only lets you use the stream on your local network. To get the stream to the web, you need a bit more...
 

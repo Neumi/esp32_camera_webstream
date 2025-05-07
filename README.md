@@ -10,8 +10,7 @@ The Arduino ESP32-Camera test sketch only lets you use the stream on your local 
 
 This collection of scripts consists of:
  - Arduino code for ESP32 camera module (AI Thinker CAM) `websocket_camera_stream.ino`
- - Python code to receive the images via websockets with `receive_stream.py`
- - Python code to push the most recent image to a website with `send_image_stream.py`
+ - Python code to receive and serve the images via websockets with `run_in_memory.py`, using `receive_stream.py`, `send_image_stream.py` and a queue system `queueu.py`
 
 
  # Why is this cool?
@@ -23,10 +22,7 @@ Upload the code to you ESP32 AI Thinker Cam board. Please test the Arduino camer
 
 2. Install the missing python requirements using pip: `pip install pillow websockets flask asyncio`
 
-3. Run `python receive_stream.py`
-You should get a constant stream of numbers (sizes of images). The image.jpg in the directory is always the latest received image.
-
-4. Open a second terminal and run `python send_image_stream.py`
+3. Run `run_in_memory.py`
 You should get a response by flask with an IP and port to enter in your browser.
 
 Now enjoy your fresh live stream! 📺
@@ -34,6 +30,10 @@ Now enjoy your fresh live stream! 📺
 
 
 # Known Issues
+
+### Security
+While this should be fine to run on a private (trusted LAN) network, exposing it to the public internet will allow others to receive and interrupt the stream. Only do this is you have sufficient knowledge.
+
 ### Browsers don't like broken images.
 This is solved using the placeholder.jpg. It just replaces the image, if the backend receives a broken frame to prevent the browser from freezing the stream.
 
